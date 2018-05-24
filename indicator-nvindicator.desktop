@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Nvidia Sensors Indicator
+GenericName=Nvidia Sensors Indicator
+Comment=An indicator for Unity which displays Nvidia sensor readings
+Exec=nvindicator
+Icon=nvindicator
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=System;
+X-GNOME-UsesNotifications=true
+X-GNOME-Autostart-enabled=true

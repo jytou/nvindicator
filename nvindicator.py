@@ -52,7 +52,7 @@ class NvIndicator:
 
             # create a new indicator
             ind = appindicator.Indicator.new(
-                "NvIndicator",
+                "NvIndicator" + str(gpu.get('id')),
                 "nvidia-settings",
                 appindicator.IndicatorCategory.HARDWARE
             )
@@ -237,11 +237,7 @@ class NvIndicator:
 
     def update_gpu(self, idx, gpu):
         self.gpus[idx].set_label(
-            "{}".format(
-                str(gpu.temperature[0].gpu_temp[0]).strip()
-            ),
-            "     "
-        )
+            "%s/%02d%%" % (str(gpu.temperature[0].gpu_temp[0]).strip(), int(str(gpu.utilization[0].gpu_util[0]).split()[0])), "      ")
 
         self.menus[idx][0].set_label(
             "Temperature\t\t{}".format(
